@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="MainPanel" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="twitterjavaspy.GUIcontroller">
+   <children>
+      <AnchorPane layoutY="1.0" prefHeight="830.0" prefWidth="1162.0">
+         <children>
+            <Label id="SearchLabel2" layoutX="20.0" layoutY="110.0" prefHeight="60.0" prefWidth="206.0" text="Enter GeoCode&#10;1. Number : latitude&#10;2. Number : longitude&#10;" />
+            <Button id="SearchBtn1" fx:id="SearchBtn1" layoutX="17.0" layoutY="82.0" mnemonicParsing="false" text="Search!" />
+            <TextField id="text1" fx:id="text1" layoutX="14.0" layoutY="57.0" text="keyword" />
+            <Label id="SearchLabel1" layoutX="14.0" layoutY="40.0" text="Enter word you look for" />
+            <TextArea id="textWall1" fx:id="TextWall1" layoutX="14.0" layoutY="241.0" prefHeight="388.0" prefWidth="289.0" />
+            <Button id="SearchBtn2" fx:id="SearchBtn2" layoutX="906.0" layoutY="254.0" mnemonicParsing="false" text="Search for Users" />
+            <AnchorPane>
+               <children>
+                  <AnchorPane>
+                     <children>
+                        <Label id="titleLabel1" layoutX="14.0" text="LookAtTweet 0.5">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <Label layoutX="33.0" layoutY="224.0" text="Tweets" />
+            <Label id="UniLabel" fx:id="UniLabel" layoutX="183.0" layoutY="224.0" prefHeight="17.0" prefWidth="0.0" />
+            <PieChart id="PieChart1" fx:id="PieChart1" layoutX="320.0" layoutY="306.0" prefHeight="502.0" prefWidth="534.0" title="10 Most used words" />
+            <TextArea fx:id="historyWall" layoutX="12.0" layoutY="647.0" prefHeight="169.0" prefWidth="289.0" />
+            <SplitMenuButton id="langMenu" fx:id="LangMenu" layoutX="177.0" layoutY="57.0" mnemonicParsing="false" text="English">
+              <items>
+                <MenuItem fx:id="LangMenuAction1" mnemonicParsing="false" text="Polish" />
+                <MenuItem fx:id="LangMenuAction2" mnemonicParsing="false" text="Japanese" />
+                  <MenuItem fx:id="LangMenuAction3" mnemonicParsing="false" text="Russian" />
+                  <MenuItem fx:id="LangMenuAction4" mnemonicParsing="false" text="Korean" />
+                  <MenuItem fx:id="LangMenuAction5" mnemonicParsing="false" text="French" />
+                  <MenuItem fx:id="LangMenuAction6" mnemonicParsing="false" text="Spanish" />
+                  <MenuItem fx:id="LangMenuAction7" mnemonicParsing="false" text="German" />
+                  <MenuItem fx:id="LangMenuAction8" mnemonicParsing="false" text="Italian" />
+                  <MenuItem fx:id="LangMenuAction9" mnemonicParsing="false" text="Portuguese" />
+                  <MenuItem fx:id="LangMenuAction10" mnemonicParsing="false" text="Simplified Chinese" />
+              </items>
+            </SplitMenuButton>
+            <Label fx:id="GeoLabel2" layoutX="17.0" layoutY="170.0" text="Search by geocode is : OFF" />
+            <Button fx:id="GeoBtn" layoutX="177.0" layoutY="106.0" mnemonicParsing="false" text="GeoData ON/OFF" />
+            <TextField id="LatitudeText" fx:id="LatText" layoutX="17.0" layoutY="198.0" prefHeight="25.0" prefWidth="69.0" />
+            <TextField fx:id="LogText" layoutX="94.0" layoutY="198.0" prefHeight="25.0" prefWidth="69.0" />
+            <Label fx:id="GeoLabel1" layoutX="177.0" layoutY="186.0" prefHeight="49.0" prefWidth="227.0" text="Example : 52.230363 , 21.007074&#10;This is GeoCode for Warsaw's Downtown&#10;" />
+            <Label layoutX="320.0" layoutY="241.0" text="Pie Chart Setting" />
+            <Label layoutX="906.0" layoutY="227.0" text="Most Followed user for this area" />
+            <Label layoutX="177.0" layoutY="40.0" text="In what language?" />
+            <SplitMenuButton id="AreaSelect" fx:id="AreaSelect" layoutX="257.0" layoutY="166.0" mnemonicParsing="false" text="5 KM">
+              <items>
+                <MenuItem fx:id="AreaMenu1" mnemonicParsing="false" text="10 KM" />
+                <MenuItem fx:id="AreaMenu2" mnemonicParsing="false" text="25 KM" />
+                  <MenuItem fx:id="AreaMenu3" mnemonicParsing="false" text="50 KM" />
+              </items>
+            </SplitMenuButton>
+            <SplitMenuButton id="PieChartSet" fx:id="PieChartSet" layoutX="320.0" layoutY="266.0" mnemonicParsing="false" text="10 Most Used Words">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+            </SplitMenuButton>
+            <Label layoutX="177.0" layoutY="170.0" text="Radius" />
+            <TextArea fx:id="UserWall" layoutX="906.0" layoutY="307.0" prefHeight="511.0" prefWidth="245.0" />
+            <Label layoutX="1015.0" layoutY="253.0" text="Searching using GeoCode &#10;will take time cause by&#10;Twitter api limits" />
+            <ScatterChart layoutX="921.0" layoutY="8.0" prefHeight="212.0" prefWidth="227.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </ScatterChart>
+            <Label layoutX="340.0" layoutY="14.0" prefHeight="112.0" prefWidth="436.0" text="Note : Due limitions of twitter &#10;GeoCode search is  likely to take time&#10;Application windows can be stuck and will not showing anything during search&#10;" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
